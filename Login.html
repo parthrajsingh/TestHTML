@@ -1,0 +1,97 @@
+<html>
+  <head>
+		<link rel="icon" type="image/png" href="./Icons/veille.png" />
+		<title>Parth Server</title>
+		<style type="text/css">
+			div.asd
+			{
+				position:relative;
+				top:23%;
+				left:39%;
+				opacity:.1;
+				background-color:green;
+				height:54%;
+				width:22%;
+				border-radius:30;
+				border-style:solid;
+				border-width:2px;
+				border-color:red;
+				background-image:url('./Images/matrix.gif');
+			}
+			div.asd:hover{opacity:.4;}
+
+			body,html{width:100%; height:100%; background-color:black; margin:0;}
+
+			div.ip{position:relative; top:60%; background-color:#004400; opacity:.6; width:100%;}
+
+			div.ip:hover{opacity:.95;}
+
+			input.loginButt{float:right; border-radius:10; background-color:blue; color:white;}
+			input.loginButt:hover{background-color:darkblue;}
+
+			.formattext{font-family:algerian; font-width:10px;}
+
+			//img.logimg{height:100%; width:100%; border-radius:30; z-index:5;}
+
+			input.round{border-radius:10; background-color:pink; font-family:Arial; font-width:5px;}
+
+			.ChangeColor:hover{color:hotpink;}
+			.logintable{z-index:12;}
+		</style>
+	</head>
+	<body>
+		<div id="loginparentdiv" class="asd">
+			<div id="loginmaindiv" class="ip">
+				<form method="get" action="Home.html">
+					<table class="ChangeColor">
+						<tr>
+							<td><span class="formattext">User Name:</span></td><td><input class="round" type="text" name="name" ></input></td>
+						</tr>
+						<tr>
+							<td><span class="formattext">Password:</span></td><td><input class="round" type="password" name="pass" ></input></td>
+						</tr>
+						<tr>
+							<td></td><td><input class="loginButt formattext" type="submit" value="Login" ></input></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript">
+		var shade = 0, Darken = false;
+		/**
+		function doonfocus()
+		{
+			document.getElementById('loginparentdiv').style.opacity = .4;
+			document.getElementById('loginmaindiv').style.opacity = .95;
+		}
+
+		function doonblur()
+		{
+			document.getElementById('loginparentdiv').style.opacity = .1;
+			document.getElementById('loginmaindiv').style.opacity = .6;
+		}*/
+		
+		function ChangeBGColor()
+		{
+			document.body.style.backgroundColor = '#ff' + (Array(3).join(shade.toString(16))) + '00';
+			if(Darken)
+				shade--;
+			else
+				shade++;
+			
+			if(shade > 15)
+			{
+				shade = 15;
+				Darken = true;
+			}
+			if(shade < 0)
+			{
+				shade = 0;
+				Darken = false;
+			}
+		}
+		setInterval(ChangeBGColor, 10);
+		</script>
+	</body>
+</html>
